@@ -65,3 +65,5 @@ gem "awesome_print", "~> 1.8"
 gem "devise", "~> 4.7"
 
 gem "font-awesome-sass"
+
+gem "bulma-rails", "~> 0.8.0"
