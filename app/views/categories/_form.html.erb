@@ -1,0 +1,29 @@
+<%= form_with(model: category, local: true) do |form| %>
+  <% if category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="columns mt-6 is-centered">
+    <div class="column is-one-third">
+      <div class="field">
+        <%= form.label :title, "Enter Title for Category", class: "is-family-primary is-size-4 has-text-justified has-text-weight-semibold" %>
+        <div class="control">
+          <br /><%= form.text_field :title, class: "input" %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit class: "button is-info is-outlined is-fullwidth" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+

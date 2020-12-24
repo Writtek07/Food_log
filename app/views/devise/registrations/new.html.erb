@@ -1,0 +1,46 @@
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-quarter">
+    <h2 class="title is-2">Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <% f.label :email,"Enter your Email", class: "label " %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "input is-info control has-icons-left has-icons-right", placeholder: "Enter Email" %><span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i></span>
+            <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+            </span>
+        </p>
+      </div>
+      
+      <div class="field">
+        <p class="control has-icons-left">
+          <% f.label :password,"Enter your Password", class: "label" %>
+          <%= f.password_field :password, autocomplete: "new-password",class: "input is-info", placeholder: "Enter Password"  %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control has-icons-left">
+          <% f.label :password,"Enter your Password Again", class: "label" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "input is-info", placeholder: "Enter Password again" %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "button is-outlined is-info is-fullwidth" %><br />
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

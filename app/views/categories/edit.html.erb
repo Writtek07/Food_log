@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <p class="title">
+        <%= render 'form', category: @category %>
+      </p>
+      <br /><footer class="card-footer">
+        <p class="card-footer-item">
+          <span>
+            <%= link_to 'Show', @category%>
+          </span>
+        </p>
+        <p class="card-footer-item">
+          <span>
+            <%= link_to 'Back', categories_path %>
+          </span>
+        </p>
+      </footer>
+    </div>  
+  </div>
+</div>

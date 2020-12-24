@@ -1,0 +1,61 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    
+    <div class="message is-danger">
+      <div class="message-header">
+        <p><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</p>
+      </div>
+      
+      <ul>
+        <% entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Food Item", class: "label" %>
+    <%= form.text_field :meal_type, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :calories, class: "label" %>
+    <%= form.number_field :calories, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :proteins, class: "label" %>
+    <%= form.number_field :proteins, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carbohydrates, class: "label" %>
+    <%= form.number_field :carbohydrates, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fats, class: "label" %>
+    <%= form.number_field :fats, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category, class: "label" %>
+    <div class="select">
+      <%= form.select :category_id, current_user.categories.collect {|u| [u.title, u.id]}%>
+    </div>
+  </div>
+   
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="actions">
+        <%= form.submit class: "button is-success is-outlined is-fullwidth" %>
+      </div>
+        
+      <br/><div class="buttons">
+        <%= link_to "Back", root_path, class: "button is-link is-outlined is-fullwidth" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

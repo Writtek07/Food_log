@@ -1,0 +1,17 @@
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
+    <nav class="panel is-info">
+      <p class="panel-heading">Category</p>
+      <div class="panel-block has-text-centered">
+    	  <%= @category.title %>
+      </div>
+    </nav>
+
+    <div class="columns is-mobile">
+      <div class="buttons mb-3 mt-4">
+        <%= link_to 'Edit', edit_category_path(@category), class: "button is-link is-light is-grey" %> 
+        <%= link_to 'Back', root_path, class: "button is-link is-light is-grey" %>
+      </div>
+    </div>
+  </div>
+</div>

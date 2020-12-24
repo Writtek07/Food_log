@@ -1,0 +1,27 @@
+<div class="columns is-centered mt-6">
+    <div class="column is-one-third">
+      <h1 class="title is-5"><strong>Your Categories</strong></h1><br/>
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% current_user.categories.each do |category| %>
+            <tr>
+              <td><%= category.title %></td>
+              <td><%= link_to 'Edit', edit_category_path(category) %></td>
+              <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+<div class="columns is-centered mt-4">
+  <%= link_to 'New Category', new_category_path, class: "button is-link is-light" %>
+</div>
